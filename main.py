@@ -38,9 +38,9 @@ async def main():
     # Автоматический импорт всех модулей
     load_modules('commands.admin')
     load_modules('commands.discord')
-    # load_modules('commands.misc')
+    load_modules('commands.misc')
     load_modules("events")
-    load_modules("tasks")
+    # load_modules("tasks")
     load_modules("modules")
     # . . .
 
