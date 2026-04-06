@@ -47,7 +47,7 @@ async def handle_request(inter, action: str):
 
 @bot.slash_command(
     name="restart",
-    description="Посылает запрос на рестарт сервера.",
+    description="(АДМИН) Посылает запрос на рестарт сервера.",
     guild_ids=[env_cfg.GUILD_DISCORD_SERVER_ID]
 )
 @has_any_role_by_keys("head_team")
@@ -60,7 +60,7 @@ async def restart_command(inter: AppCommandInteraction):
 
 @bot.slash_command(
     name="update",
-    description="Посылает запрос на обновление сервера.",
+    description="(АДМИН) Посылает запрос на обновление сервера.",
     guild_ids=[env_cfg.GUILD_DISCORD_SERVER_ID]
 )
 @has_any_role_by_keys("head_team")
