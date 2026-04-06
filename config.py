@@ -87,7 +87,7 @@ class ENVIRONMENT_VAR:
     @property
     def DISCORD_AUTH_CHANNEL_ID(self) -> int:
         """ID канала для команд привязки аккаунта (по умолчанию 1481280582368493761)"""
-        return int(get_env_variable("DISCORD_AUTH_CHANNEL_ID", "1481280582368493761"))
+        return int(get_env_variable("DISCORD_AUTH_CHANNEL_ID", "1490642843067355226"))
 
     @property
     def POSTGRES_DATABASE(self) -> str:
