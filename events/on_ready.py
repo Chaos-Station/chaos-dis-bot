@@ -1,5 +1,5 @@
 from bot_init import bot, env_cfg, log
-# from tasks.monitor_status_ss14 import monitor_status_ss14
+from tasks.monitor_status_ss14 import monitor_status_ss14
 
 
 async def start_task_if_not_running(task, task_name: str):
@@ -38,12 +38,12 @@ async def on_ready():
     except Exception as e:
         log.error(f"❌ Failed to send log: {e}")
 
-    # # Запуск всех фоновых задач
-    # tasks_to_start = [
-    #     (monitor_status_ss14, "Monitor Status SS14"),
-    #     # (update_member_count, "Update Member Count"),
-    # ]
-    # # Для дебага
-    # # tasks_to_start = []
-    # for task, name in tasks_to_start:
-    #     await start_task_if_not_running(task, name)
+    # Запуск всех фоновых задач
+    tasks_to_start = [
+        (monitor_status_ss14, "Monitor Status SS14"),
+        # (update_member_count, "Update Member Count"),
+    ]
+    # Для дебага
+    # tasks_to_start = []
+    for task, name in tasks_to_start:
+        await start_task_if_not_running(task, name)
