@@ -38,7 +38,7 @@ async def check_size_log():
                         print(f"⚠️ Неизвестная единица размера: {size_unit}")
                         continue
 
-                    if size_in_gb > 0.5:
+                    if size_in_gb > 0.1:
                         await log_channel.send(
                             f"🚨 **Предупреждение!** Таблица `admin_log` в базе данных `{db_name}` "
                             f"превысила 21 ГБ! 📊\n"
