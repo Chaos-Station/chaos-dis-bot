@@ -1,11 +1,12 @@
 from disnake.ext import tasks
 
-from bot_init import bot, env_cfg, ss14_db
+from bot_init import bot, env_cfg, ss14_db, log
 
 
 @tasks.loop(hours=12)
 async def check_size_log():
     try:
+        log.info("🔍 Проверка размера логов БД...")
         log_channel = bot.get_channel(env_cfg.LOG_TECH_CHANNEL)
         await log_channel.send("▶️ Проверка размера таблицы admin_log...")
         if not log_channel:
