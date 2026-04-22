@@ -6,9 +6,8 @@ from bot_init import bot, env_cfg, ss14_db, log
 @tasks.loop(hours=12)
 async def check_size_log():
     try:
-        log.info("🔍 Проверка размера логов БД...")
+        log.info("🔍 Проверка размера логов БД SS14...")
         log_channel = bot.get_channel(env_cfg.LOG_TECH_CHANNEL)
-        await log_channel.send("▶️ Проверка размера таблицы admin_log...")
         if not log_channel:
             print("❌ Не удалось получить канал логов.")
             await log_channel.send("❌ Не удалось получить канал логов.")
@@ -38,7 +37,7 @@ async def check_size_log():
                         print(f"⚠️ Неизвестная единица размера: {size_unit}")
                         continue
 
-                    if size_in_gb > 0.1:
+                    if size_in_gb > 17:
                         await log_channel.send(
                             f"🚨 **Предупреждение!** Таблица `admin_log` в базе данных `{db_name}` "
                             f"превысила 17 ГБ! 📊\n"
