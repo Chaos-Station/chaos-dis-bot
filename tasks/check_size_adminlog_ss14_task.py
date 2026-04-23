@@ -45,10 +45,10 @@ async def check_size_log():
                             f"Размер в гигабайтах: **{size_in_gb:.2f} GB**\n"
                             f"⚠️ Требуется внимание! <@&1489256771167060038>"
                         )
-                    else:
-                        await log_channel.send(
-                            f"ℹ️ Размер admin_log в `{db_name}`: {size_in_gb:.2f} GB (порог 17 GB)"
-                        )
+                    # else:
+                    #     await log_channel.send(
+                    #         f"ℹ️ Размер admin_log в `{db_name}`: {size_in_gb:.2f} GB (порог 17 GB)"
+                    #     )
     except Exception as e:
         msg = f"Ошибка в check_size_log: {e}"
         print(msg)
